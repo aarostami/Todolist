@@ -31,10 +31,9 @@ function Mainapp() {
 	var editTodo = useRef(null)
 	var edittext = useRef('')
 
-
 	useEffect(() => {
 
-	}, [inputvalue, doingTodo, doneKey, doingKey, check])
+	}, [doneKey, doingKey, check])
 
 	const add = () => {
 		if (inputvalue != '') {
@@ -70,9 +69,21 @@ function Mainapp() {
 	}
 
 	function edit(index) {
-		// todo.current[index]
 		editTodo.current = index
 		setEditMode(true)
+	}
+
+	function editAccept(index) {
+		if (edittext.current != '') {
+			todo.current[index] = edittext.current;
+			setEditMode(false);
+			localStorage.setItem('todo', [JSON.stringify(todo.current)])
+			localStorage.setItem('checkedTodo', [JSON.stringify(checkedTodo.current)])
+			localStorage.setItem('checkboxtick', [JSON.stringify(checkbox.current)])
+			localStorage.setItem('doingTodo', [JSON.stringify(doingTodo.current)])
+		} else {
+			setEditMode(false);
+		}
 	}
 
 	const done = (value, index, e) => {
@@ -115,15 +126,6 @@ function Mainapp() {
 		setDoingKey(true)
 	}
 
-	function editAccept(index) {
-		todo.current[index] = edittext.current;
-		setEditMode(false);
-		localStorage.setItem('todo', [JSON.stringify(todo.current)])
-		localStorage.setItem('checkedTodo', [JSON.stringify(checkedTodo.current)])
-		localStorage.setItem('checkboxtick', [JSON.stringify(checkbox.current)])
-		localStorage.setItem('doingTodo', [JSON.stringify(doingTodo.current)])
-	}
-
 	function donefilter() {
 		// setTodo(todo.filter((value, index) => value == 'aa'))
 		/* var x = ''
@@ -155,7 +157,7 @@ function Mainapp() {
 				<div key={index}>
 					{/* <ListItem><Checkbox onClick={(e) => { done(index, e) }} /><p style={{ textDecoration: (checkedTodo.current.some((v) => { if (v.val == todo[index]) return true }) == true) ? 'line-through' : 'none' }}>{value}</p></ListItem> */}
 					<ListItem>
-						<span style={{width: '100%', textAlign: 'start'}}>{value}</span>
+						<span style={{ width: '100%', textAlign: 'start' }}>{value}</span>
 						<IconButton color='warning'><HourglassBottomIcon /></IconButton>
 					</ListItem>
 					<Divider />
@@ -171,7 +173,7 @@ function Mainapp() {
 
 					</> : <>
 						<Checkbox onClick={(e) => { done(value, index, e); setCheck(!check) }} checked={Boolean(checkbox.current.find(v => v.id == index))} />
-						<span style={{ textDecoration: (checkedTodo.current.some((v) => { if (v.val == todo.current[index]) return true }) == true) ? 'line-through' : 'none', textDecorationStyle: 'double', width: '100%', textAlign: 'start', padding: '0 0.5rem' }}>{value}</span>
+						<span style={{ textDecoration: (checkedTodo.current.some((v) => { if (v.id == index) return true }) == true) ? 'line-through' : 'none', textDecorationStyle: 'double', width: '100%', textAlign: 'start', padding: '0 0.5rem' }}>{value}</span>
 						<IconButton sx={{ alignContent: 'end' }} color='success' onClick={() => { edit(index); setCheck(!check) }}><EditIcon /></IconButton>
 						<IconButton sx={{ alignContent: 'end' }} color='error' onClick={() => { remove(index); setCheck(!check) }}><DeleteIcon /></IconButton>
 					</>
