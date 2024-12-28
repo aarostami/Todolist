@@ -1,70 +1,13 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# پروژه Todo list
+## نحوه اجرای پروژه
+دستور اجرا: npm start
+در تکست باکس متنی نوشته و با زدن دکمه + به لیست اضافه کنید و اون رو ویرایش و حذف کنید.
+در تیک ها یک مشکلاتی وجود داره که کامل حل نشده هست.
+## این پروژه به صورت زیر اجرا میشود:
+اول متغیرها و state ها تعریف میشود که اگر  local storage وجود داشت از اون خوانده بشه.
+دوم html اجرا میشه که یک textbox وجود داره که اگر چیزی نوشته شود در متغیر inputvalue ذخیره میشه و اگر دکمه + زده شود فانکشن add اجرا میشه و در متغیر todo ذخیره میکنه.
+در لیست اگر روی دکمه سطل زباله کلیک کنیم فانکشن remove اجرا میشه و اون item رو حذف میکنه، اگر روی دکمه مداد کلیک بشه فانکشن edit اجرا میشه و یک textbox قابل تغییر نشون میده که میشه نوشته رو تغییر داد و بعد از زدن تیک فانکشن editAccept اجرا میشه و در متغیر todo ثبت میشه.
+سوم اگر آیتمی تیک زده بشه فانکشن done اجرا میشه و اون رو در دوتا متغیر checkbox و checkedTodo اضافه میکنه. که هم تیک چک باکس زده میشه هم روی اون آیتم به عنوان انجام شده خط کشیده میشه.
+در این فانکشن ها مقدارها در local storage ذخیره یا حذف میشه.
+در قسمت سه دکمه وضعیف (همه – انجام شده – در حال انجام) با استفاده از کامپوننت Todo در قسمت "همه" از متغیر todo نشان داده میشه و در قسمت "در حال انجام" متغیر checkedTodo از todo کم میشود و به عنوان انجام شده میشود و در قسمت "انجام شده" از متغیر checkedTodo نشان داده میشود.
+زمان تحویل یک هفته میباشد.
