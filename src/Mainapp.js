@@ -168,9 +168,8 @@ function Mainapp() {
 			return todo.current.map((value, index) => <div key={index}>
 				<ListItem sx={{ display: 'flex' }}>
 					{(editTodo.current == index && editMode == true) ? <>
-						<TextField variant='outlined' size='small' defaultValue={todo.current[index]} onChange={(e) => edittext.current = e.target.value} sx={{ width: '100%' }} />
+						<TextField variant='outlined' size='small' defaultValue={todo.current[index]} onChange={(e) => edittext.current = e.target.value} sx={{ width: '100%', marginLeft: '5px' }} />
 						<IconButton sx={{ alignContent: 'end' }} color='info' onClick={() => { editAccept(index); setCheck(!check) }}><DoneIcon /></IconButton>
-
 					</> : <>
 						<Checkbox onClick={(e) => { done(value, index, e); setCheck(!check) }} checked={Boolean(checkbox.current.find(v => v.id == index))} />
 						<span style={{ textDecoration: (checkedTodo.current.some((v) => { if (v.id == index) return true }) == true) ? 'line-through' : 'none', textDecorationStyle: 'double', width: '100%', textAlign: 'start', padding: '0 0.5rem' }}>{value}</span>
@@ -195,7 +194,7 @@ function Mainapp() {
 							<Grid container sx={{ flexDirection: 'column', rowGap: '0.5rem' }}>
 								<Grid container flexWrap={'nowrap'}>
 									<FormControl sx={{ flexGrow: 1, pt: '3px', '& .MuiInputBase-root': { height: '36px' } }}>
-										<TextField sx={{ width: '100%' }} variant='outlined' size='small' placeholder='کار جدید اضافه کنید ...' value={inputvalue} onChange={(e) => { setInputvalue(e.target.value) }} />
+										<TextField sx={{ width: '100%',pl: '5px' }} variant='outlined' size='small' placeholder='کار جدید اضافه کنید ...' value={inputvalue} onChange={(e) => { setInputvalue(e.target.value) }} />
 										<FormLabel sx={{ pt: '0.5rem', color: 'red', display: error == true ? 'block' : 'none' }}>مقدار خالی وارد نکنید!</FormLabel>
 									</FormControl>
 									<IconButton color='info' onClick={() => add()}><AddCircleOutlineIcon /></IconButton>
