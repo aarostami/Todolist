@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/aarostami/Todolist.git/static/css/main.3ce23c5e.css",
-    "main.js": "/aarostami/Todolist.git/static/js/main.b7a76447.js",
-    "static/js/511.7b9d5847.chunk.js": "/aarostami/Todolist.git/static/js/511.7b9d5847.chunk.js",
-    "index.html": "/aarostami/Todolist.git/index.html",
-    "main.3ce23c5e.css.map": "/aarostami/Todolist.git/static/css/main.3ce23c5e.css.map",
-    "main.b7a76447.js.map": "/aarostami/Todolist.git/static/js/main.b7a76447.js.map",
-    "511.7b9d5847.chunk.js.map": "/aarostami/Todolist.git/static/js/511.7b9d5847.chunk.js.map"
+    "main.css": "/Todolist/static/css/main.3ce23c5e.css",
+    "main.js": "/Todolist/static/js/main.e337e858.js",
+    "static/js/511.7b9d5847.chunk.js": "/Todolist/static/js/511.7b9d5847.chunk.js",
+    "index.html": "/Todolist/index.html",
+    "main.3ce23c5e.css.map": "/Todolist/static/css/main.3ce23c5e.css.map",
+    "main.e337e858.js.map": "/Todolist/static/js/main.e337e858.js.map",
+    "511.7b9d5847.chunk.js.map": "/Todolist/static/js/511.7b9d5847.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3ce23c5e.css",
-    "static/js/main.b7a76447.js"
+    "static/js/main.e337e858.js"
   ]
 }
